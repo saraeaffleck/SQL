@@ -1,0 +1,27 @@
+--Create a grocery store database
+
+CREATE TABLE groceries (id integer primary key, name text, section text, quantity integer, price integer, aisle integer, organic text);
+
+INSERT INTO groceries VALUES
+(1, 'Bananas', 'produce', 7, 0.99, 2, 'yes'),
+(2, 'Pizza', 'frozen', 2, 7.99, 15, 'no'),
+(3, 'Chicken', 'meat', 1, 4.99, 6, 'yes'),
+(4, 'Apples', 'produce', 5, 1.29, 2, 'yes'),
+(5, 'Rice', 'pasta', 1, 3.29, 4, 'no'),
+(6, 'Oatmeal', 'breakfast', 3, 4.00, 5, 'yes'),
+(7, 'Milk', 'dairy', 2, 4.25, 1, 'no'),
+(8, 'Pork Chops', 'meat', 4, 8.00, 6, 'no'),
+(9, 'Yogurt', 'dairy', 6, 2.00, 1, 'yes'),
+(10, 'Cherrios', 'breakfast', 2, 6.00, 5, 'no'),
+(11, 'Alfredo', 'pasta', 6, 3.25, 4, 'no'),
+(12, 'Ice Cream', 'frozen', 3, 4.75, 15, 'no'),
+(13, 'Cucumber', 'produce', 11, 1.00, 2, 'yes'),
+(14, 'Cat Food', 'pet', 2, 15.00, 11, 'no'),
+(15, 'Cheese', 'dairy', 1, 12.00, 1, 'yes');
+SELECT * FROM groceries;
+
+--diaplay the database ordered by aisle ascending
+SELECT * FROM groceries ORDER BY aisle asc;
+
+--display the database ordered by average price of organic items
+SELECT SUM(price) FROM groceries GROUP BY organic;
