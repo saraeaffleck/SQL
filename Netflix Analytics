@@ -1,4 +1,4 @@
--- Example query (PostgreSQL)
+
 #In this SQL code, I'm querying a database that's holding Netflix data to answer various questions about the data.
 
 #1. How many movie titles are there in the databases? (movies only, not tv shows)
