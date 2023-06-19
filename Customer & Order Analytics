@@ -1,3 +1,5 @@
+#In this SQL, I'm querying a database with multiple tables in it to quantify statistics about customer and order data. 
+
 SELECT * FROM JanSales;
 
 --1. How many orders were placed in January?
@@ -13,7 +15,7 @@ WHERE product = 'iPhone'
 AND length(orderid) = 6
 AND orderid <> 'Order ID';
 
-----3.Select the customer account numbers for all the orders that were placed in February?
+--3.Select the customer account numbers for all the orders that were placed in February?
 SELECT distinct acctnum
 FROM BIT_DB.customers
 INNER JOIN BIT_DB.FebSales
