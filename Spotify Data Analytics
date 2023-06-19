@@ -23,29 +23,32 @@ tempo decimal(6,3) NOT NULL,
 duration_ms integer NOT NULL,
 time_signature integer NOT NULL )
 
+#Then I inserted the Spotify Data .csv into the table.
+
+#Next, I explored the data using the following SQL. 
+
 SELECT * FROM BIT_DB.Spotifydata;
 
-
---1. What are the top 5 songs?
+#First I determined the top 5 songs
 SELECT track_name as Track, artist_name as Artist, popularity
 FROM BIT_DB.Spotifydata
 ORDER BY popularity desc
 Limit 5;
 
---2. What are the 5 least popular songs?
+#Next I determined the 5 least popular songs 
 SELECT track_name as Track, artist_name as Artist, Popularity
 FROM BIT_DB.Spotifydata
 ORDER BY popularity asc
 Limit 5;
 
 
---3. What songs have the highest 'Danceability' and 'Enegry'?
+#Then I determined what songs have the highest 'Danceability' and 'Enegry'
 SELECT track_name as Track, artist_name as Artist, avg(danceability) as Danceability,avg(energy) as Enegry
 FROM BIT_DB.Spotifydata
 GROUP BY artist_name
 Limit 5;
 
---4. Who are the top 10 artists by popularity?
+#Lastly I determined who  the top 10 artists are by popularity
 SELECT track_name, artist_name, popularity
 FROM BIT_DB.Spotifydata
 ORDER BY popularity desc
